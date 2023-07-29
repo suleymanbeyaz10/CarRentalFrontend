@@ -1,3 +1,4 @@
+<h2>Müşteriler</h2>
 <table class="table">
     <thead>
         <tr>
@@ -7,14 +8,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let car of cars">
-            <td>{{car.id}}</td>
-            <td>{{car.brandId}}</td>
-            <td>{{car.colorId}}</td>
-            <td>{{car.name}}</td>
-            <td>{{car.modelYear}}</td>
-            <td>{{car.dailyPrice}}</td>
-            <td>{{car.description}}</td>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.id}}</td>
+            <td>{{customer.userId}}</td>
+            <td>{{customer.companyName}}</td>
         </tr>
     </tbody>
 </table>
