@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Rental } from 'src/app/models/rentalModels/rental';
-import { RentalResponseModel } from 'src/app/models/rentalModels/rentalResponseModel';
+import { Rental } from 'src/app/models/rental';
 import { RentalService } from 'src/app/services/rentalServices/rental.service';
 
 @Component({

@@ -1,15 +1,22 @@
-<h4>Markalar</h4>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Marka Id</th>
-            <th>Marka Adı</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let brand of brands">
-            <td>{{brand.brandId}}</td>
-            <td>{{brand.brandName}}</td>
-        </tr>
-    </tbody>
-</table>
+<ol class="list-group">
+    <li routerLink="/cars" [class]="getCurrentBrandForAllClass()" id="forAll" (click)="setOtherCurrentBrand()"
+        style="margin: 5px 0px 5px 0px;">Filtreyi
+        Sıfırla</li>
+</ol>
+
+<div class="p-1 text-center bg-secondary" style="border-radius:5px 5px 5px 5px;">
+    <h4>Markalar</h4>
+</div>
+
+
+<div class="spinner-border text-primary" role="status" *ngIf="dataLoaded!=true">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<ul class="list-group">
+
+    <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}"
+        [class]="getCurrentBrandClass(brand)" *ngFor="let brand of brands">
+        {{brand.brandName}}
+    </li>
+</ul>

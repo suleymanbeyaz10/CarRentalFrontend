@@ -1,4 +1,10 @@
 <h2>Müşteriler</h2>
+
+<button *ngIf="dataLoaded!=true" class="btn btn-primary" type="button" disabled>
+    <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+    <span class="visually-hidden" role="status">Loading...</span>
+</button>
+
 <table class="table">
     <thead>
         <tr>
