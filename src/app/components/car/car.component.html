@@ -1,4 +1,31 @@
-<h2>Arabalar</h2>
+<!-- <button *ngIf="dataLoaded!=true" class="btn btn-primary" type="button" disabled>
+    <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+    <span class="visually-hidden" role="status">Loading...</span>
+</button>
+
+<div class="card-deck mb-3 text-center" *ngFor="let car of cars">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <img src="" alt="">
+        </div>
+        <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{car.name}}</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>10 users included</li>
+                <li>2 GB of storage</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-outline-secondary" (click)="getCarDetailsById()">Araç Detaylarına Git</button>
+        </div>
+    </div>
+</div> -->
+
+<!--***************************************-->
+
+<div class="p-1 text-center " style="border-radius:5px 5px 5px 5px; background-color: cadetblue; color: white;">
+    <h4>Arabalar</h4>
+</div>
 
 <button *ngIf="dataLoaded!=true" class="btn btn-primary" type="button" disabled>
     <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
@@ -15,6 +42,7 @@
             <th>Model Yılı</th>
             <th>Günlük Ödeme</th>
             <th>Açıklama</th>
+            <th>Detaylar</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +54,7 @@
             <td>{{car.modelYear}}</td>
             <td>{{car.dailyPrice}}</td>
             <td>{{car.description}}</td>
+            <td><button (click)="navigateToCarDetails(car.id)">Detaylar</button></td>
         </tr>
     </tbody>
 </table>

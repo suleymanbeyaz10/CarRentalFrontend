@@ -1,0 +1,5 @@
+.carousel-item img {
+    width: 800px;
+    height: 400px;
+    object-fit: contain; /* Resimleri boyutlandırırken oranı korur ve aşağıya doğru uzatır. */
+}

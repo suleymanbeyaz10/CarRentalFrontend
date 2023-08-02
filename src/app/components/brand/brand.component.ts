@@ -47,6 +47,5 @@ export class BrandComponent implements OnInit {
 
   setOtherCurrentBrand() {
     this.currentBrand = { brandId: 0, brandName: "" };
-
   }
 }

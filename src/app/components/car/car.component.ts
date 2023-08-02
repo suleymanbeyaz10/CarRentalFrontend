@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Car } from 'src/app/models/car';
+import { CarImage } from 'src/app/models/carImage';
+import { CarDetailService } from 'src/app/services/carDetailServices/car-detail.service';
+import { CarImageService } from 'src/app/services/carImageServices/car-image.service';
 import { CarService } from 'src/app/services/carServices/car.service';
 
 @Component({
@@ -11,9 +14,10 @@ import { CarService } from 'src/app/services/carServices/car.service';
 export class CarComponent implements OnInit {
 
   cars: Car[] = [];
+  carImages: CarImage[] = [];
   dataLoaded = false;
 
-  constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
+  constructor(private carService: CarService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -50,4 +54,12 @@ export class CarComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
+
+  navigateToCarDetails(carId: number) {
+    this.router.navigate(['car/:id'], { queryParams: { id: carId } })
+
+  }
+
 }
+
+
