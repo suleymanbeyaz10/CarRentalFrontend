@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-car-image',
   templateUrl: './car-image.component.html',
   styleUrls: ['./car-image.component.css']
 })
-export class CarImageComponent {
+export class CarImageComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
 }

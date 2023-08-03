@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
-import { CarDetailService } from 'src/app/services/carDetailServices/car-detail.service';
-import { CarImageService } from 'src/app/services/carImageServices/car-image.service';
 import { CarService } from 'src/app/services/carServices/car.service';
 
 @Component({
@@ -56,8 +54,7 @@ export class CarComponent implements OnInit {
   }
 
   navigateToCarDetails(carId: number) {
-    this.router.navigate(['car/:id'], { queryParams: { id: carId } })
-
+    this.router.navigate(['car/', carId])
   }
 
 }
