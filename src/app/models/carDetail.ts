@@ -1,4 +1,3 @@
-import { CarImage } from "./carImage";
 
 export interface CarDetail {
     carId: number;
