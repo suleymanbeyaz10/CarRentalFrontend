@@ -8,6 +8,14 @@
     <h4>Markalar</h4>
 </div>
 
+<div class="mb-3" style="padding: 2px;">
+    <label for="filterBrand" class="form-label"></label>
+    <input type="text" [(ngModel)]="filterBrand" class="form-control" id="filterBrand" placeholder="Marka giriniz...">
+</div>
+
+<!-- <div *ngIf="filterBrand.length>2" class="alert alert-primary">
+    <strong>{{filterBrand}}</strong> arama sonuçları...
+</div> -->
 
 <div class="spinner-border text-primary" role="status" *ngIf="dataLoaded!=true">
     <span class="visually-hidden">Loading...</span>
@@ -16,7 +24,7 @@
 <ul class="list-group">
 
     <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}"
-        [class]="getCurrentBrandClass(brand)" *ngFor="let brand of brands">
+        [class]="getCurrentBrandClass(brand)" *ngFor="let brand of brands | filterBrand:filterBrand">
         {{brand.brandName}}
     </li>
 </ul>

@@ -1,6 +1,11 @@
 <div class="p-1 text-center"
-    style="border-radius:5px 5px 5px 5px; margin-top: 5px; background-color: cadetblue; color: white">
+    style="border-radius:5px 5px 5px 5px; margin-top: 10px; background-color: cadetblue; color: white">
     <h4>Renkler</h4>
+</div>
+
+<div class="mb-3">
+    <label for=" filterColor" class="form-label"></label>
+    <input type="text" [(ngModel)]="filterColor" class="form-control" id="filterColor" placeholder="Renk giriniz...">
 </div>
 
 <div class="spinner-border text-primary" role="status" *ngIf="dataLoaded!==true">
@@ -9,7 +14,7 @@
 
 <ul class="list-group">
     <li (click)="setCurrentColor(color)" routerLink="/cars/color/{{color.colorId}}"
-        [class]="getCurrentColorClass(color)" *ngFor="let color of colors">
+        [class]="getCurrentColorClass(color)" *ngFor="let color of colors| filterColor:filterColor">
         {{color.colorName}}
     </li>
 </ul>
