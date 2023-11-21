@@ -42,5 +42,9 @@ export class CarDetailComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
+  navigateToRentalPage() {
+    // rental.component.html sayfasına yönlendirme yapılacak
+    this.router.navigate(['/rental']); // 'rental' burada yönlendirilecek route'a karşılık gelir
+  }
 
 }

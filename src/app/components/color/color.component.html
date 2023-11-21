@@ -18,3 +18,12 @@
         {{color.colorName}}
     </li>
 </ul>
+
+<!-- 
+For select-option
+<select class="form-select" [(ngModel)]="currentColor" aria-label="Default select example"
+    routerLink="/cars/colors/{{currentColor}}">
+    <option selected>Tümü</option>
+    <option *ngFor="let color of colors|filterColor:filterColor" [value]="color.colorId"
+        (click)="setCurrentColor(color)">{{color.colorName}}</option>
+</select> -->

@@ -1,6 +1,6 @@
 <ol class="list-group">
-    <li routerLink="/cars" [class]="getCurrentBrandForAllClass()" id="filterClearBtn" (click)="setOtherCurrentBrand()"
-        style="margin: 5px 0px 5px 0px;">Filtreyi
+    <li routerLink="/cars" [class]="getCurrentBrandForAllClass()" id="filterClearBtn">
+        Filtreyi
         Sıfırla</li>
 </ol>
 
@@ -21,10 +21,22 @@
     <span class="visually-hidden">Loading...</span>
 </div>
 
+
 <ul class="list-group">
 
     <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}"
         [class]="getCurrentBrandClass(brand)" *ngFor="let brand of brands | filterBrand:filterBrand">
         {{brand.brandName}}
     </li>
+
 </ul>
+
+
+
+<!-- For select-option
+
+<select class="form-select" [(ngModel)]="currentBrand" aria-label="Default select example"
+    routerLink="/cars/brands/{{currentBrand}}">
+    <option *ngFor="let brand of brands | filterBrand:filterBrand" [value]="brand.brandId"
+        (click)="setCurrentBrand(brand)">{{brand.brandName}}</option>
+</select> -->

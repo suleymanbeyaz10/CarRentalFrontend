@@ -23,8 +23,12 @@ export class RentalComponent implements OnInit {
 
   getRentals() {
     this.rentalService.getRentals().subscribe(response => {
-      this.rentals = response.data
+      this.rentals = response.data;
       this.dataLoaded = true;
     });
+  }
+
+  rentTheCar(rental: Rental) {
+    this.rentalService.rentTheCar(rental);
   }
 }

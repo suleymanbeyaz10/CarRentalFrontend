@@ -53,7 +53,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let car of cars">
+        <tr *ngFor="let car of cars | filterCar:filterCar">
             <td>{{car.id}}</td>
             <td>{{car.brandId}}</td>
             <td>{{car.colorId}}</td>
